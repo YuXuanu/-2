@@ -79,6 +79,83 @@ for(int i = 0;i < bytes.length;i++){
 //int indexOf(String str)	返回指定子字符串在字符串内第一次出现处的索引（下标）。
 System.out.println("oraclephppythonjavac++mysqlJdbc".indexOf("java"));		//15
 
+//int lastIndexOf(String str)  或  int lastIndexOf(String str, int fromIndex)	返回指定子字符串在字符串内最后一次出现处的索引（下标），fromInt是从什么位置开始检索。
+
+//boolean startsWith(String prefix)		判断是否以xxx开头
+//
+
+//String substring(int beginIndex)		通过下标截取字符串
+System.out.println("http://www.baidu.com".substring(7));	//www.baidu.com
+//String substring(int beginIndex, int endIndex)	有起始位置（包括）和结束位置（不包括）
+System.out.println("http://www.baidu.com".substring(7,10));	//www
+
+//boolean isEmpty()		判断某个字符串是否为空串
+
+//int length()		返回其长度
+
+//String replace(char oldChar, char newChar)	替换字符串
+String newStirng2 = "name=zhangsan&password=123&age=20".replace("=",":");
+System.out.println(newString2);
+
+//String[]	split(String regex)		传分隔符，进行字符串拆分
+String[] ymd = "1980-10-11".split("=");
+for(int i = 0;i < ymd.length;i++){
+    System.out.println(ymd[i]);
+}
+
+//char[] toCharArray()		将字符串转换为char数组
+char[] chars = "我是中国人".toCharArray();
+for(int i = 0;i < ymd.length;i++){
+    System.out.println(ymd[i]);
+}
+
+//String toLowerCase()		转换为小写
+//String toUpperCase()		转换为大写
+
+//String trim()		去除字符串前后空白
+
+//static String	valueOf(boolean b)		唯一一个静态的方法，不需要new对象。里面可以传boolean，int，long，float，double等多种类型，都会将非字符串转换为字符串。
+String s1 = String.ValueOf(true);
+String s1 = String.ValueOf(100);
+String s1 = String.ValueOf(3.14);
+
+String s1 = String.ValueOf(new Customer());		//会自动调用该对象的同String()方法，如果没有重写则会打印此对象的内存地											//址。
+											//正如println()方法，在输出一个引用的时候，也会自动调用toString()方法。
 
 ```
+
+## StringBuffer和StringBuilder
+
+如果以后需要进行大量的字符串拼接操作，建议使用**java.lang.StringBuffer/StringBuilder类** 。
+这样会减少内存空间的浪费。
+以下举例：
+
+```java
+StringBuffer stringBuffer = new StringBuffer();
+stringBuffer.append("a");
+stringBuffer.append("b");
+stringBuffer.append("c");
+stringBuffer.append(3.14);
+stringBuffer.append(true);
+stringBuffer.append(100L);
+System.out.println(stringBuffer.toString());	//这里的toStirng方法会自动调用，可以省略。
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
